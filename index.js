@@ -93,7 +93,7 @@ Image.prototype._upload = function _upload(dest, version, cb) {
     Key: `${dest}${version.suffix || ''}.${format}`,
     ACL: version.awsImageAcl,
     Body: fs.createReadStream(version.path),
-    ContentType: format === 'jpg' ? 'image/jpeg' : format === 'pdf' ? 'application/pdf' : `image/${format}
+    ContentType: format === 'jpg' ? 'image/jpeg' : format === 'pdf' ? 'application/pdf' : `image/${format}`
   };
 
   if (version.awsImageExpires) {
